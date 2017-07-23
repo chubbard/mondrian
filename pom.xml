@@ -3,15 +3,15 @@
   <modelVersion>4.0.0</modelVersion>
 
   <!-- The basics. -->
-  <groupId>pentaho</groupId>
+  <groupId>com.github.chubbard</groupId>
   <artifactId>mondrian</artifactId>
   <packaging>jar</packaging>
-  <version>4.3-SNAPSHOT</version>
+  <version>4.3.1.10</version>
 
   <!-- More project information. -->
   <name>mondrian</name>
   <description>Mondrian OLAP engine.</description>
-  <url>http://github.com/pentaho/mondrian</url>
+  <url>http://github.com/chubbard/mondrian</url>
   <inceptionYear>2001</inceptionYear>
   <organization>
     <name>Pentaho</name>
@@ -64,9 +64,9 @@
   <issueManagement/>
 
   <scm>
-    <connection>scm:git:git://github.com/pentaho/mondrian.git</connection>
-    <developerConnection>scm:git:git@github.com:pentaho/mondrian.git</developerConnection>
-    <url>http://github.com/pentaho/mondrian/tree/master</url>
+    <connection>scm:git:git://github.com/chubbard/mondrian.git</connection>
+    <developerConnection>scm:git:git@github.com:chubbard/mondrian.git</developerConnection>
+    <url>http://github.com/chubbard/mondrian/tree/master</url>
   </scm>
 
   <!-- Dependencies. -->
