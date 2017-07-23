@@ -976,7 +976,7 @@ public class Query extends QueryPart {
     /**
      * Looks up a named set.
      */
-    private NamedSet lookupNamedSet(Id.Segment segment) {
+    public NamedSet lookupNamedSet(Id.Segment segment) {
         if (!(segment instanceof Id.NameSegment)) {
             return null;
         }
@@ -1007,6 +1007,21 @@ public class Query extends QueryPart {
         return scopedNamedSet;
     }
 
+    private ScopedNamedSet lookupScopedNamedSet( String name, ArrayStack<QueryPart> scopeList ) {
+        ScopedNamedSet bestScopedNamedSet = null;
+        int bestScopeOrdinal = -1;
+        for (ScopedNamedSet scopedNamedSet : scopedNamedSets) {
+            if (Util.equalName(scopedNamedSet.name, name)) {
+                int scopeOrdinal = scopeList.indexOf(scopedNamedSet.scope);
+                if (scopeOrdinal > bestScopeOrdinal) {
+                    bestScopedNamedSet = scopedNamedSet;
+                    bestScopeOrdinal = scopeOrdinal;
+                }
+            }
+        }
+        return bestScopedNamedSet;
+    }
+
     /**
      * Looks up a named set defined by an alias.
      *
@@ -1024,18 +1039,7 @@ public class Query extends QueryPart {
             return null;
         }
         String name = ((Id.NameSegment) nameParts.get(0)).getName();
-        ScopedNamedSet bestScopedNamedSet = null;
-        int bestScopeOrdinal = -1;
-        for (ScopedNamedSet scopedNamedSet : scopedNamedSets) {
-            if (Util.equalName(scopedNamedSet.name, name)) {
-                int scopeOrdinal = scopeList.indexOf(scopedNamedSet.scope);
-                if (scopeOrdinal > bestScopeOrdinal) {
-                    bestScopedNamedSet = scopedNamedSet;
-                    bestScopeOrdinal = scopeOrdinal;
-                }
-            }
-        }
-        return bestScopedNamedSet;
+        return lookupScopedNamedSet( name, scopeList );
     }
 
     /**

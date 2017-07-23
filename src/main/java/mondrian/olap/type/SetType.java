@@ -99,7 +99,7 @@ public class SetType implements Type {
     }
 
     public int getArity() {
-        return elementType.getArity();
+        return elementType != null ? elementType.getArity() : -1;
     }
 
     public Type computeCommonType(Type type, int[] conversionCount) {

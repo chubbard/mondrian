@@ -5002,7 +5002,12 @@ public class RolapSchemaLoader {
         buf.append(",")
             .append(Util.nl);
         Util.quoteMdxIdentifier(Property.MEMBER_SCOPE.name, buf);
-        buf.append(" = 'CUBE'");
+        if( propNames.contains(Property.MEMBER_SCOPE.name) ) {
+            int index = propNames.indexOf(Property.MEMBER_SCOPE.name);
+            buf.append(" = ").append( propExprs.get(index) );
+        } else {
+            buf.append(" = 'CUBE'");
+        }
 
         // Assign the member an ordinal higher than all of the stored measures.
         if (!propNames.contains(Property.MEMBER_ORDINAL.getName())) {
