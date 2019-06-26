@@ -6,7 +6,7 @@
   <groupId>com.github.chubbard</groupId>
   <artifactId>mondrian</artifactId>
   <packaging>jar</packaging>
-  <version>4.3.1.10</version>
+  <version>4.3.1.11</version>
 
   <!-- More project information. -->
   <name>mondrian</name>
