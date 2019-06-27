@@ -130,6 +130,6 @@
         <exclude org="jaxen" module="jaxen"/>
         <exclude org="org.ccil.cowan.tagcoup" module="tagsoup"/>
         <exclude org="javax.sql" module="jdbc-stdext"/>
-        <exclude org="xml-apis" module="xml-apis"/>
+        <!--<exclude org="xml-apis" module="xml-apis"/>-->
     </dependencies>
 </ivy-module>
