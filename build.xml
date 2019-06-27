@@ -153,7 +153,6 @@ mondrian/rolap/RolapCubeUsages.java"/>
     <pathelement location="${lib.dir}/xalan.jar"/>
     <pathelement location="${lib.dir}/xercesImpl.jar"/>
     <pathelement location="${lib.dir}/validation-api.jar"/>
-    <pathelement location="${lib.dir}/xml-apis.jar"/>
     <pathelement path="${env.CLASSPATH}"/>
     <pathelement location="${ant.home}/lib/ant.jar"/>
     <pathelement location="${ant.home}/lib/optional.jar"/>
