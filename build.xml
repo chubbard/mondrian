@@ -506,9 +506,12 @@ copy"/>
       <include name="mondrian/util/PropertyUtil.java" />
     </javac>
 
+    <property name="debug.lib" refid="project.build.classpath"/>
+    <echo>${debug.lib}</echo>
+
     <java classpathref="project.build.classpath"
         classname="mondrian.util.PropertyUtil"
-        fork="no"/>
+        fork="yes"/>
   </target>
 
   <target name="copy">
